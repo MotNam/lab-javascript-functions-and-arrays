@@ -1,38 +1,89 @@
 // Iteration #1: Find the maximum
-function maxOfTwoNumbers() {}
+function maxOfTwoNumbers(num1, num2) {
+  if (num1 > num2){
+  return num1;
+}
+else {
+  return num2;
+}
+}
+console.log(maxOfTwoNumbers(103,15));
 
 
 
 // Iteration #2: Find longest word
 const words = ['mystery', 'brother', 'aviator', 'crocodile', 'pearl', 'orchard', 'crackpot'];
 
-function findLongestWord() {}
+function findLongestWord(words) {
+let maxWord = words[0].length;
+let result = words[0];
+  for (let i = 0; i < words.length ; i++){
+  let long = words[i].length;
+  if (long > maxWord){
+    result = words[i];
+    maxWord = long; 
+  }
+  }
+  return result;
+}
+console.log(findLongestWord(words));
+
 
 
 
 // Iteration #3: Calculate the sum
 const numbers = [6, 12, 1, 18, 13, 16, 2, 1, 8, 10];
-
-function sumNumbers() {}
-
+function sumNumbers(numbers) {
+  let result=0;
+  for (let i = 0; i < numbers.length ; i++){
+    result += numbers[i];
+  }
+  return result;
+}
+console.log (sumNumbers(numbers));
 
 
 // Iteration #3.1 Bonus:
 function sum() {}
 
 
-
 // Iteration #4: Calculate the average
 // Level 1: Array of numbers
-const numbersAvg = [2, 6, 9, 10, 7, 4, 1, 9];
 
-function averageNumbers() {}
+const numbersAvg = [2, 6, 9, 10, 7, 4, 1, 9];
+function averageCalc(numbersAvg) {
+  let sum = 0;
+  let totalCount = numbersAvg.length;
+  for (let i = 0; i< totalCount ; i++) {
+    sum += numbersAvg[i];
+  }
+  return sum /totalCount;
+}
+console.log (averageCalc(numbersAvg))
 
 
 // Level 2: Array of strings
+// 1) Number of words in array: wordsArr.length
+// 2) Get wordlength of each word: 
+// 3) Sum wordlength of all words
+// 4) Calculate avg wordlength: sum wordlength of all words divided by number of words in array
+
+
 const wordsArr = ['seat', 'correspond', 'linen', 'motif', 'hole', 'smell', 'smart', 'chaos', 'fuel', 'palace'];
 
-function averageWordLength() { }
+function averageWordLength(list) {
+  let sum = 0;
+  let avgWordLength = 0;
+
+  list.forEach((element) => {
+   sum += element.length;
+  });
+   avgWordLength = sum / list.length;
+   return avgWordLength;
+  }
+
+console.log(averageWordLength(wordsArr))
+
 
 // Bonus - Iteration #4.1
 function avg() {}
@@ -51,8 +102,18 @@ const wordsUnique = [
   'simple',
   'bring'
 ];
-
-function uniquifyArray() {}
+function uniquifyArray(array) {
+  let newArray = [];
+  array.forEach((element) => {
+  if (newArray.includes(element)) {
+    //console.log ("item already exists");
+  } else {
+    newArray.push(element);
+  }
+});
+return newArray;
+}
+  console.log (uniquifyArray(wordsUnique))
 
 
 
